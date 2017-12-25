@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/config.xsd">
+
+    <label lang="en">BitcoinCash Payments Plugin</label>
+    <label lang="de">BitcoinCash Payments Plugin</label>
+
+    <description lang="en">BitcoinCash Payments Plugin for blockchain.info</description>
+    <description lang="de">BitcoinCash Payments Plugin for blockchain.info</description>
+
+    <elements>
+        <element required="true" type="text">
+            <name>zw_extended_public_key</name>
+            <label lang="de">Extended Public Key</label>
+            <label lang="en">Extended Public Key</label>
+            <value></value>
+            <description lang="en">The xPub for your Blockchain Wallet account (located in Settings - Accounts and Addresses - Show xPub).</description>
+            <description lang="de">The xPub for your Blockchain Wallet account (located in Settings - Accounts and Addresses - Show xPub).</description>
+        </element>
+        <element required="true" type="text">
+            <name>zw_blockchain_api_key</name>
+            <label lang="de">API key</label>
+            <label lang="en">API key</label>
+            <value></value>
+            <description lang="en">In order to use the Receive Payments API V2, please apply for an API key at api.blockchain.info</description>
+            <description lang="de">In order to use the Receive Payments API V2, please apply for an API key at api.blockchain.info</description>
+        </element>
+        <element required="true" type="text">
+            <name>zw_callback_secret</name>
+            <label lang="de">Secret</label>
+            <label lang="en">Secret</label>
+            <value>Set-Your-Secret-here-or-not</value>
+            <description lang="en">The secret will be passed back to the callback script and will be checked for validity. Do not modify it while there are unfinished transactions remaining.</description>
+            <description lang="de">The secret will be passed back to the callback script and will be checked for validity. Do not modify it while there are unfinished transactions remaining.</description>
+        </element>
+    </elements>
+</config>
