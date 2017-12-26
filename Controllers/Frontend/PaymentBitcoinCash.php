@@ -74,7 +74,13 @@ class Shopware_Controllers_Frontend_PaymentBitcoinCash extends Shopware_Controll
             if (!in_array($currency_iso_code, $limited_currencies)) {
                 $this->redirect(array('controller' => 'checkout'));
             } else {
-                $value_in_BCH = file_get_contents("https://blockchain.info/tobch?currency=".$currency_iso_code."&value=".$amountdue."");
+                /** https://cex.io/api/last_price/BCH/EUR **/
+                //$value_in_BCH = file_get_contents("https://blockchain.info/tobch?currency=".$currency_iso_code."&value=".$amountdue."");
+                $json = file_get_contents('https://cex.io/api/last_price/BCH/EUR');
+                $json = json_decode($json, true);
+
+                $value_in_BCH = 1/($json['lprice'] / $amountdue);
+
                 if ($value_in_BCH > 0) {
                     /** @var TYPE_NAME $zw_extended_public_key */
                     $zw_extended_public_key = Shopware()->Config()->getByNamespace('ZwWebPaymentBitcoinCash', 'zw_extended_public_key');

@@ -4,7 +4,7 @@
 
 {* Breadcrumb *}
 {block name='frontend_index_start' append}
-    {$sBreadcrumb = [['name'=>"{s name=PaymentTitle}Pay with Bitcon{/s}"]]}
+    {$sBreadcrumb = [['name'=>"{s name=PaymentTitle}Pay with Bitcon Cash (BCH){/s}"]]}
 {/block}
 
 {* Main content *}
